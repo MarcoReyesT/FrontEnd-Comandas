@@ -6,7 +6,7 @@ class LoginService extends ApiService {
     this.name = endpoint
   }
   authenticate (credentials) {
-    return this.getResource().save(credentials)
+    return this.save(credentials)
   }
 }
 
