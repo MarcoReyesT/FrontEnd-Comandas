@@ -19,20 +19,24 @@
 </template>
 <script>
   import {loginService} from '@/services/Login.service.js'
-
+  import CredentialsServices from '@/services/Credentials.service.js'
   export default {
     data () {
       return {
         credentials: {
           email: '',
           password: ''
-        }
+        },
+        credentialService: new CredentialsServices()
       }
     },
     methods: {
       login (model) {
         loginService.authenticate(model).then(data => {
           console.log(data)
+          this.credentialService.setToken(data.body.token)
+          this.$router.push('/usuarios')
+          // window.location.href = '/pokemons'
         })
       }
     }

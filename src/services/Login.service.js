@@ -1,4 +1,9 @@
 import ApiService from './Api.service.js'
+import Vue from 'vue'
+import VueResource from 'vue-resource'
+import {address} from '@/constants/address.js'
+
+Vue.use(VueResource)
 
 class LoginService extends ApiService {
   constructor (endpoint) {
@@ -6,7 +11,7 @@ class LoginService extends ApiService {
     this.name = endpoint
   }
   authenticate (credentials) {
-    return this.save(credentials)
+    return Vue.http.post(address.api + this.name, credentials)
   }
 }
 
