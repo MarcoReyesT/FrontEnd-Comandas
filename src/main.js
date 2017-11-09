@@ -15,9 +15,11 @@ const credentials = new Credentials()
 Vue.http.interceptors.push(function (request, next) {
   request.headers.set('Authorization', credentials.getToken())
   request.headers.set('Accept', 'application/json')
+  console.log('asdsdasdasd')
   let vm = this
   next(function (response) {
     if (response.status === 401) {
+      console.log('CREDENCIALES BORRADAS')
       credentials.clearCredentials()
       window.location.href = (address.spa)
       vm.$dispatch('logout')

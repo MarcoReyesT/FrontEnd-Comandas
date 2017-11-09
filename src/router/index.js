@@ -1,9 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Hello from '@/components/Hello'
-import Pokemons from '@/components/Pokemons'
+import Comandas from '@/components/Comandas'
 import Login from '@/components/Login'
-import Client from '@/components/Client'
+import Empleado from '@/components/Empleado'
 
 Vue.use(Router)
 
@@ -16,9 +16,9 @@ export default new Router({
       redirect: '/login'
     },
     {
-      path: '/pokemons',
-      name: 'Pokemons',
-      component: Pokemons
+      path: '/comandas',
+      name: 'Comandas',
+      component: Comandas
     },
     {
       path: '/login',
@@ -26,9 +26,9 @@ export default new Router({
       component: Login
     },
     {
-      path: '/usuarios',
-      name: 'usuarios',
-      component: Client
+      path: '/empleados',
+      name: 'empleados',
+      component: Empleado
     }
   ]
 })

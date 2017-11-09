@@ -1,6 +1,6 @@
 <template>
   <section>
-    <div class="well">
+    <div class="col-sm-6">
       <form action="javascript:;" @submit.prevent="login(credentials)" class="form">
         <div class="form-group">
           <label for="email">Correo Electrónico</label>
@@ -11,7 +11,7 @@
           <input id="pass" v-model="credentials.password" type="password" class="form-control">
         </div>
         <div class="form-group">
-          <input type="submit" class="btn btn-primary" value="Autentificar">
+          <input type="submit" class="btn btn-default" value="Autentificar">
         </div>
       </form>
     </div>

@@ -1,15 +1,20 @@
 <template>
-	<nav class="navbar navbar-inverse wolf-nav">
+	<nav class="navbar navbar-inverse fixed comandas-nav" type="dark">
 	  <div class="container-fluid">
 	    <div class="navbar-header">
-	      <a class="navbar-brand" href="#">FirstExampleWithVue</a>
+	      <a class="navbar-brand ctexto" href="#">Sistema de Comandas</a>
 	    </div>
 	    <ul class="nav navbar-nav pull-right">
 	      <li>
-	      	<router-link to="/">Vue APP</router-link>
+	      	<button class="btn btn-default">
+	      		<router-link to="/empleados">Empleados</router-link>
+	      	</button>
+	      	
 	      </li>
 	      <li>
-	    		<router-link to="/pokemons">Pokemons</router-link>
+	      	<button class="btn btn-default">
+	    			<router-link class="ctexto" to="/comandas">Comandas</router-link>
+	    		</button>
 	    	</li>
 	    </ul>
 	  </div>
@@ -19,12 +24,13 @@
 	export default {}
 </script>
 <style scoped>
-	.wolf-nav {
-		position: fixed;
-		z-index: 2;
+	.comandas-nav {
 		width: 100%;
-		background-color: #122f2b;
-		border-color: #0e2522;
+		background-color: #F18A4B;
+		border-color: #F18A4B;
 		border-radius: 0;
+	}
+	.ctexto {
+		color: #111;
 	}
 </style>

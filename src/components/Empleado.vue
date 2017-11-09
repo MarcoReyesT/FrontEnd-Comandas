@@ -4,13 +4,13 @@
     <table class="table table-bordered table-hovered">
       <thead>
         <th>Nombre</th>
-        <th>Email</th>
+        <th>Rut</th>
         <th>Acciones</th>
       </thead>
       <tbody>
         <tr v-for="user in users">
-          <td>{{ user.name }}</td>
-          <td>{{ user.email }}</td>
+          <td>{{ user.nombre }}</td>
+          <td>{{ user.rut }}</td>
           <td><button>Editar</button><button>Eliminar</button> </td>
         </tr>
       </tbody>
@@ -18,14 +18,16 @@
   </section>
 </template>
 <script>
-import {clientService} from '@/services/Client.service.js'
+import {empleadoService} from '@/services/Empleado.service.js'
 export default {
   data: () => ({
     users: []
   }),
   mounted () {
-    clientService.query().then(data => {
+    empleadoService.query().then(data => {
       this.users = data.body
+      console.log('--EMPLEADOS--')
+      console.log(this.users)
     })
   }
 }
